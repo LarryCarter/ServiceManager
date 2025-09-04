@@ -1,0 +1,51 @@
+{
+  "Prefix": "Su_",
+  "ServiceLogRoot": "C:\\Services\\",
+  "MonitorLogs": true,
+
+  "Core": {
+    "Services": [
+      { "Name": "Su_Auth",     "LogLocation": "core\\auth\\",     "MonitorSeparate": false },
+      { "Name": "Su_Registry", "LogLocation": "core\\registry\\", "MonitorSeparate": false }
+    ]
+  },
+
+  "Profiles": {
+    "Web": {
+      "Services": [
+        { "Name": "Su_WebExtraction", "LogLocation": "web\\extraction\\",  "MonitorSeparate": true  },
+        { "Name": "Su_WebFilter",     "LogLocation": "web\\filter\\",      "MonitorSeparate": false },
+        { "Name": "Su_WebReconcile",  "LogLocation": "web\\reconcile\\",   "MonitorSeparate": false }
+      ]
+    },
+    "DBOracle": {
+      "Services": [
+        { "Name": "Su_DBOracleExtraction", "LogLocation": "db\\oracle\\extraction\\", "MonitorSeparate": true  },
+        { "Name": "Su_DBOracleFilter",     "LogLocation": "db\\oracle\\filter\\",     "MonitorSeparate": true  },
+        { "Name": "Su_DBOracleReconcile",  "LogLocation": "db\\oracle\\reconcile\\",  "MonitorSeparate": false }
+      ]
+    },
+    "Linux": {
+      "Services": [
+        { "Name": "Su_LinuxExtraction", "LogLocation": "linux\\extraction\\", "MonitorSeparate": false },
+        { "Name": "Su_LinuxFilter",     "LogLocation": "linux\\filter\\",     "MonitorSeparate": false },
+        { "Name": "Su_LinuxReconcile",  "LogLocation": "linux\\reconcile\\",  "MonitorSeparate": false }
+      ]
+    }
+  },
+
+  "Exceptions": {
+    "Services": [
+      { "Name": "RamdonSerice", "LogLocation": "", "MonitorSeparate": false }
+    ]
+  },
+
+  "Paging": {
+    "ServiceName": "Su_Auth",
+    "AppSettingsPath": "C:\\Services\\core\\auth\\appsettings.Production.json",
+    "JsonKey": "esarBaseQuery",
+    "PageSize": 1000000,
+    "EnforceFetchNextToPageSize": true,
+    "ResetOffsetOnProfileChange": true
+  }
+}
