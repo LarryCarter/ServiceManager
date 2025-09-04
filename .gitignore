@@ -1,0 +1,4 @@
+# Ignore logs and backup files
+logs/
+*.bak*
+*.state.json
